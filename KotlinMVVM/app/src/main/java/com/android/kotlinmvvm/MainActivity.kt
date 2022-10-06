@@ -1,5 +1,6 @@
 package com.android.kotlinmvvm
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
@@ -18,6 +19,10 @@ class MainActivity : AppCompatActivity() {
         binding.btnChange.setOnClickListener {
             text = "됐다!"
             binding.invalidateAll()
+        }
+        binding.btnNext.setOnClickListener {
+            val intent = Intent(this, SubActivity::class.java)
+            startActivity(intent)
         }
     }
 }
